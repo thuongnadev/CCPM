@@ -1,0 +1,46 @@
+{
+  "name": "pms-plugin",
+  "version": "1.0.0",
+  "description": "Project Management System Integration - Seamlessly manage tasks, projects, and time tracking from Claude Code",
+  "author": "PMS Plugin Team",
+  "main": "index.js",
+  "type": "node",
+  "capabilities": [
+    "api-integration",
+    "task-management",
+    "project-management",
+    "time-tracking"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/yourcompany/pms-plugin",
+  "keywords": [
+    "pms",
+    "project-management",
+    "task-management",
+    "time-tracking",
+    "api",
+    "collaboration",
+    "jira",
+    "asana",
+    "trello"
+  ],
+  "slash_commands": [
+    "pms-tasks",
+    "pms-projects",
+    "pms-create-task",
+    "pms-start-task",
+    "pms-complete-task",
+    "pms-status",
+    "pms-config"
+  ],
+  "hooks": [
+    "pre-command",
+    "post-command"
+  ],
+  "dependencies": {
+    "axios": "^1.6.0",
+    "inquirer": "^9.2.0"
+  },
+  "claude_version": ">=1.0.0",
+  "category": "Development Tools"
+}
