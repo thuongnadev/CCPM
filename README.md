@@ -1,269 +1,147 @@
-# LaraCollab Plugin for Claude Code
+# Critical Chain Project Management (CCPM) Plugin
 
-Seamlessly integrate LaraCollab project management with Claude Code for enhanced productivity and streamlined workflow management.
+Enhanced Project Management System plugin with advanced Critical Chain Project Management capabilities for Claude Code.
 
-## 🚀 Features
+## Features
 
-- **Task Management** - View, create, start, and complete tasks directly from Claude Code
-- **Project Overview** - Browse all your projects and their details
-- **Time Tracking** - Track time spent on tasks automatically
-- **Real-time Updates** - Sync changes instantly with your LaraCollab instance
-- **Smart Formatting** - Beautiful, readable task and project displays
-- **Configuration Management** - Secure token storage and connection management
+### 🚀 Critical Chain Project Management
+- **Critical Chain Analysis**: Automatically identify the critical path and optimize task scheduling
+- **Buffer Management**: Smart project and feeding buffer allocation and monitoring
+- **Resource Optimization**: Advanced resource loading analysis and conflict detection
+- **Capacity Planning**: Optimize resource utilization based on realistic constraints
 
-## 📋 Requirements
+### 📊 Buffer Management
+- **Project Buffers**: Protects the overall project delivery date
+- **Feeding Buffers**: Protects critical chain tasks from delays
+- **Buffer Consumption Monitoring**: Real-time tracking of buffer usage
+- **Health Indicators**: Visual status indicators for buffer health
 
-- Claude Code installed and configured
-- Access to a LaraCollab instance (version 1.0+)
-- API token from your LaraCollab account
-- Node.js 16+ (for plugin runtime)
+### 🎯 Resource Management
+- **Resource Loading Analysis**: Track resource utilization across all tasks
+- **Conflict Detection**: Identify resource scheduling conflicts
+- **Capacity Planning**: Optimize resource allocation based on availability
+- **Utilization Targets**: Set and monitor optimal resource utilization
 
-## 🔧 Installation
+### ⚡ Advanced Commands
 
-### Install via Claude Code Marketplace
+#### CCPM Core Commands
+- `/ccpm-enable <project-id>` - Enable CCPM for a project
+- `/ccpm-analyze <project-id>` - Analyze critical chain
+- `/ccpm-report <project-id>` - Generate comprehensive CCPM report
+- `/ccpm-resources <project-id>` - Get resource loading analysis
 
-```bash
-claude-code plugin install lara-collab
-```
+#### Buffer Management
+- `/ccpm-buffers <project-id>` - Identify feeding buffers needed
+- `/ccpm-update-buffer <task-id> <percentage>` - Update buffer status
 
-### Manual Installation
+#### Analysis & Planning
+- `/ccpm-recalculate <project-id>` - Recalculate critical chain after changes
+- `/ccpm-dashboard` - Get overall CCPM dashboard
 
-1. Clone or download this plugin
-2. Install the plugin locally:
-```bash
-claude-code plugin install /path/to/lara-collab-plugin
-```
+### 📈 CCPM Methodology
 
-## ⚙️ Configuration
+This plugin implements the core principles of Critical Chain Project Management:
 
-After installation, configure your LaraCollab connection:
+1. **Focus on Constraints**: Identify and manage the critical chain
+2. **Buffer Management**: Protect project completion through strategic buffers
+3. **Resource Optimization**: Balance workload and minimize multitasking
+4. **Realistic Planning**: Use aggressive durations with buffer protection
 
-```bash
-/lara-config
-```
+### 🔧 Configuration
 
-You'll need:
-- **Base URL**: Your LaraCollab instance URL (e.g., `https://your-laracollab.com`)
-- **API Token**: Generate this from your LaraCollab user settings
-- **Timeout**: Request timeout in seconds (default: 30)
+Enable CCPM with customizable settings:
+- Project buffer percentage (default: 50%)
+- Feeding buffer percentage (default: 25%)
+- Resource utilization target (default: 75%)
+- Auto-analysis on changes
 
-## 📚 Available Commands
-
-### Task Management
-
-#### `/lara-tasks` - List all tasks
-```bash
-/lara-tasks                    # Show all tasks
-/lara-tasks completed          # Show completed tasks only
-/lara-tasks pending            # Show pending tasks only
-/lara-tasks urgent             # Show urgent tasks only
-```
-
-#### `/lara-create-task` - Create a new task
-```bash
-/lara-create-task Fix authentication bug project:1 estimate:2
-/lara-create-task Implement new dashboard feature project:2
-```
-
-#### `/lara-start-task` - Start working on a task
-```bash
-/lara-start-task 123           # Start task with ID 123
-```
-
-#### `/lara-complete-task` - Mark a task as completed
-```bash
-/lara-complete-task 123 "Fixed the authentication issue successfully"
-/lara-complete-task 456 "Added user registration and email verification"
-```
-
-### Project Management
-
-#### `/lara-projects` - List all projects
-```bash
-/lara-projects                 # Show all available projects
-```
-
-### System & Configuration
-
-#### `/lara-status` - Check connection status
-```bash
-/lara-status                   # Display API connection info
-```
-
-#### `/lara-config` - Configure plugin settings
-```bash
-/lara-config                   # Interactive configuration setup
-```
-
-## 🎯 Usage Examples
-
-### Daily Workflow
-
-1. **Check your tasks for the day:**
-```bash
-/lara-tasks pending
-```
-
-2. **Start working on a task:**
-```bash
-/lara-start-task 123
-```
-
-3. **Complete the task when done:**
-```bash
-/lara-complete-task 123 "Implemented user authentication with JWT"
-```
-
-### Project Management
-
-1. **View all projects:**
-```bash
-/lara-projects
-```
-
-2. **Create a new task in a specific project:**
-```bash
-/lara-create-task "Add user profile page" project:2 estimate:4
-```
-
-3. **Monitor task progress:**
-```bash
-/lara-tasks project:2
-```
-
-## 🔐 Security
-
-- API tokens are stored securely in your local Claude Code configuration
-- Tokens are never transmitted to third-party services
-- All communication happens directly between Claude Code and your LaraCollab instance
-- Support for self-signed certificates for on-premises deployments
-
-## 🛠️ Advanced Configuration
-
-The plugin stores configuration in `~/.claude/lara-collab.json`:
-
-```json
-{
-  "baseUrl": "https://your-laracollab.com",
-  "apiToken": "your-api-token",
-  "timeout": 30,
-  "defaultProjectId": 1,
-  "autoStartTasks": false,
-  "notifications": true,
-  "timeTracking": {
-    "enabled": true,
-    "roundToNearest": 15,
-    "autoStop": false
-  },
-  "display": {
-    "showCompletedTasks": true,
-    "tasksPerPage": 20,
-    "sortBy": "created_at",
-    "sortOrder": "desc"
-  }
-}
-```
-
-## 🐛 Troubleshooting
-
-### Connection Issues
-
-1. **Check your configuration:**
-```bash
-/lara-status
-```
-
-2. **Verify API endpoint:**
-```bash
-curl -H "Authorization: Bearer YOUR_TOKEN" https://your-laracollab.com/api/ai/info
-```
-
-3. **Reconfigure the plugin:**
-```bash
-/lara-config
-```
-
-### Common Errors
-
-- **401 Unauthorized**: Check your API token
-- **404 Not Found**: Verify your base URL and API version
-- **Timeout**: Increase timeout setting in configuration
-- **CORS Error**: Ensure your LaraCollab instance allows requests from Claude Code
-
-## 📝 Development
-
-### Building from Source
+### 📋 Usage Examples
 
 ```bash
-# Clone the repository
-git clone https://github.com/laracollab/claude-code-plugin.git
-cd claude-code-plugin
+# Enable CCPM for project 123
+/ccpm-enable 123 project-buffer:40 feeding-buffer:20 resource-utilization:80
 
-# Install dependencies
-npm install
+# Analyze critical chain
+/ccpm-analyze 123
 
-# Test locally
-claude-code plugin install --dev .
+# Generate comprehensive report
+/ccpm-report 123
 
-# Build for production
-npm run build
+# Check resource loading
+/ccpm-resources 123
+
+# Update buffer status
+/ccpm-update-buffer 456 75
+
+# Get CCPM dashboard
+/ccpm-dashboard
 ```
 
-### Plugin Structure
+### 🎨 Visual Indicators
 
-```
-lara-collab-plugin/
-├── plugin.json              # Plugin metadata
-├── index.js                 # Main plugin entry point
-├── src/
-│   ├── api-client.js        # LaraCollab API client
-│   ├── config.js           # Configuration manager
-│   ├── commands/           # Command handlers
-│   └── utils/
-│       └── formatters.js   # Output formatting
-├── README.md               # This file
-└── package.json            # Dependencies
-```
+- 🟢 **Healthy**: Buffer consumption ≤ 25%
+- 🟡 **Caution**: Buffer consumption 26-50%
+- 🟠 **Warning**: Buffer consumption 51-75%
+- 🔴 **Critical**: Buffer consumption > 75%
 
-## 🤝 Contributing
+### 🏗️ Architecture
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/new-feature`
-3. Commit your changes: `git commit -am 'Add new feature'`
-4. Push to the branch: `git push origin feature/new-feature`
-5. Submit a pull request
+The plugin integrates with multiple PM systems:
+- **LaraCollab**: Native integration with full CCPM support
+- **Jira**: Custom field integration for CCPM data
+- **Asana**: Custom attributes for buffer management
+- **Trello**: Labels and custom fields for CCPM tracking
+- **Custom API**: Flexible REST API integration
 
-## 📄 License
+### 📊 Reporting
 
-This plugin is released under the MIT License. See [LICENSE](LICENSE) for details.
+Generate comprehensive CCPM reports including:
+- Project overview and buffer status
+- Critical chain task analysis
+- Feeding buffer consumption
+- Resource utilization metrics
+- Completion forecasts
+- Risk assessments
+- Actionable recommendations
 
-## 🔗 Links
+### 🔗 Integration
 
-- **LaraCollab Website**: https://laracollab.com
-- **Documentation**: https://docs.laracollab.com
-- **Claude Code**: https://claude.ai/claude-code
-- **Plugin Repository**: https://github.com/laracollab/claude-code-plugin
-- **Issue Tracker**: https://github.com/laracollab/claude-code-plugin/issues
+The plugin seamlessly integrates with:
+- LaraCollab PM system
+- Time tracking modules
+- Resource allocation systems
+- Risk assessment tools
+- Project analytics dashboards
 
-## 🆘 Support
+## Getting Started
 
-If you encounter issues or have questions:
+1. **Install Plugin**: `/plugin install ccpm-plugin`
+2. **Configure PM System**: `/pms-config`
+3. **Enable CCPM**: `/ccpm-enable <project-id>`
+4. **Analyze Project**: `/ccpm-analyze <project-id>`
+5. **Monitor Buffers**: `/ccpm-report <project-id>`
 
-1. Check the [Troubleshooting](#-troubleshooting) section
-2. Search existing [GitHub Issues](https://github.com/laracollab/claude-code-plugin/issues)
-3. Create a new issue with detailed information
-4. Contact LaraCollab support at support@laracollab.com
+## Benefits
 
-## 📊 Changelog
+- **Improved Project Predictability**: Buffer management reduces delivery variance
+- **Optimized Resource Utilization**: Better allocation and reduced conflicts
+- **Enhanced Risk Management**: Early warning system for project delays
+- **Increased Project Success Rate**: CCPM methodology proven to improve outcomes
+- **Better Decision Making**: Real-time data for project management decisions
 
-### Version 1.0.0
-- Initial release
-- Task management commands
-- Project overview
-- Time tracking integration
-- Configuration management
-- Comprehensive error handling
+## Contributing
 
----
+Contributions are welcome! Please see the contributing guidelines for details.
 
-**Made with ❤️ by the LaraCollab team**
+## License
+
+MIT License - see LICENSE file for details.
+
+## Repository
+
+https://github.com/thuongnadev/CCPM
+
+## Support
+
+For issues and feature requests, please visit:
+https://github.com/thuongnadev/CCPM/issues
