@@ -1,11 +1,11 @@
-# 🚀 LaraCollab Plugin Setup Guide
+# 🚀 CCPM Plugin Setup Guide
 
 ## 📋 Prerequisites
 
-Before you can use the LaraCollab plugin, you need:
+Before you can use the CCPM plugin, you need:
 
-### 1. LaraCollab Instance
-- A running LaraCollab installation (v1.0+)
+### 1. CCPM Instance
+- A running CCPM installation (v1.0+)
 - Admin access to generate API tokens
 - Access to the API endpoints
 
@@ -13,10 +13,10 @@ Before you can use the LaraCollab plugin, you need:
 - Claude Code CLI installed and working
 - User account with plugin installation permissions
 
-### 3. API Token from LaraCollab
-Generate a Sanctum token from your LaraCollab instance:
+### 3. API Token from CCPM
+Generate a Sanctum token from your CCPM instance:
 
-1. **Login to LaraCollab as admin**
+1. **Login to CCPM as admin**
 2. **Go to Settings → API Tokens**
 3. **Create new token** with permissions:
    - `ai:read` - Read tasks and projects
@@ -30,8 +30,8 @@ Generate a Sanctum token from your LaraCollab instance:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/lara-collab-plugin.git
-cd lara-collab-plugin
+git clone https://github.com/yourusername/ccpm-plugin.git
+cd ccpm-plugin
 
 # Install dependencies
 npm install
@@ -44,14 +44,14 @@ claude-code plugin install .
 
 ```bash
 # Install directly from GitHub repository
-claude-code plugin install https://github.com/yourusername/lara-collab-plugin.git
+claude-code plugin install https://github.com/yourusername/ccpm-plugin.git
 ```
 
 ### Method 3: From Marketplace (When published)
 
 ```bash
 # Install from Claude Code marketplace
-claude-code plugin install lara-collab
+claude-code plugin install ccpm
 ```
 
 ## ⚙️ Initial Configuration
@@ -86,15 +86,15 @@ After installation, configure the plugin:
 ```bash
 /lara-config
 
-🔧 LaraCollab Configuration
+🔧 CCPM Configuration
 
-? Enter your LaraCollab base URL: https://mycompany.laracollab.com
-? Enter your LaraCollab API token: [hidden]
+? Enter your CCPM base URL: https://mycompany.ccpm.com
+? Enter your CCPM API token: [hidden]
 ? Request timeout (seconds): 30
 
-✅ LaraCollab configured successfully!
+✅ CCPM configured successfully!
 
-Base URL: https://mycompany.laracollab.com
+Base URL: https://mycompany.ccpm.com
 Timeout: 30s
 
 Next steps:
@@ -115,7 +115,7 @@ Test your configuration:
 
 **Expected output:**
 ```
-🚀 LaraCollab System Information
+🚀 CCPM System Information
 
 AI Version: 1.0.0
 Laravel Version: 10.0.0
@@ -173,8 +173,8 @@ Email: john@company.com
 **Error:** `Connection test failed`
 
 **Solutions:**
-- Check your LaraCollab URL is correct
-- Ensure your LaraCollab instance is accessible
+- Check your CCPM URL is correct
+- Ensure your CCPM instance is accessible
 - Verify your API token is valid
 - Check if token has required permissions
 
@@ -191,8 +191,8 @@ Email: john@company.com
 
 **Solutions:**
 - Verify your base URL includes the full domain
-- Check if LaraCollab API is enabled
-- Ensure running LaraCollab v1.0+
+- Check if CCPM API is enabled
+- Ensure running CCPM v1.0+
 
 #### 4. Timeout Issues
 **Error:** `Request timeout`
@@ -208,7 +208,7 @@ Enable debug logging:
 
 ```bash
 # Set environment variable
-export DEBUG=lara-collab
+export DEBUG=ccpm
 
 # Run commands with verbose output
 /lara-tasks
@@ -220,7 +220,7 @@ If you need to start over:
 
 ```bash
 # Remove configuration file
-rm ~/.claude/lara-collab.json
+rm ~/.claude/ccpm.json
 
 # Reconfigure
 /lara-config
@@ -231,8 +231,8 @@ rm ~/.claude/lara-collab.json
 ### Configuration File Location
 
 Your settings are stored in:
-- **Linux/Mac:** `~/.claude/lara-collab.json`
-- **Windows:** `%USERPROFILE%\.claude\lara-collab.json`
+- **Linux/Mac:** `~/.claude/ccpm.json`
+- **Windows:** `%USERPROFILE%\.claude\ccpm.json`
 
 ### Manual Configuration
 
@@ -240,7 +240,7 @@ You can edit the configuration file directly:
 
 ```json
 {
-  "baseUrl": "https://yourcompany.laracollab.com",
+  "baseUrl": "https://yourcompany.ccpm.com",
   "apiToken": "your-sanctum-token-here",
   "timeout": 30,
   "defaultProjectId": 1,
@@ -265,9 +265,9 @@ You can edit the configuration file directly:
 You can also use environment variables:
 
 ```bash
-export LARACOLLAB_BASE_URL="https://yourcompany.laracollab.com"
-export LARACOLLAB_API_TOKEN="your-token-here"
-export LARACOLLAB_TIMEOUT="30"
+export CCPM_BASE_URL="https://yourcompany.ccpm.com"
+export CCPM_API_TOKEN="your-token-here"
+export CCPM_TIMEOUT="30"
 ```
 
 ## 🔐 Security Best Practices
@@ -298,7 +298,7 @@ If you encounter issues:
    curl -H "Authorization: Bearer YOUR_TOKEN" https://yourdomain.com/api/ai/info
    ```
 4. **Create an issue** on the GitHub repository
-5. **Contact LaraCollab support** at support@laracollab.com
+5. **Contact CCPM support** at support@ccpm.com
 
 ## 📖 Next Steps
 
@@ -310,4 +310,4 @@ Once configured:
 4. **Create new tasks:** `/lara-create-task "description"`
 5. **Complete work:** `/lara-complete-task [id] "notes"`
 
-Happy coding with LaraCollab! 🚀
+Happy coding with CCPM! 🚀

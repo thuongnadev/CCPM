@@ -1,21 +1,21 @@
-# LaraCollab Plugin for Claude Code
+# CCPM Plugin for Claude Code
 
-Seamlessly integrate LaraCollab project management with Claude Code for enhanced productivity and streamlined workflow management.
+Seamlessly integrate CCPM project management with Claude Code for enhanced productivity and streamlined workflow management.
 
 ## 🚀 Features
 
 - **Task Management** - View, create, start, and complete tasks directly from Claude Code
 - **Project Overview** - Browse all your projects and their details
 - **Time Tracking** - Track time spent on tasks automatically
-- **Real-time Updates** - Sync changes instantly with your LaraCollab instance
+- **Real-time Updates** - Sync changes instantly with your CCPM instance
 - **Smart Formatting** - Beautiful, readable task and project displays
 - **Configuration Management** - Secure token storage and connection management
 
 ## 📋 Requirements
 
 - Claude Code installed and configured
-- Access to a LaraCollab instance (version 1.0+)
-- API token from your LaraCollab account
+- Access to a CCPM instance (version 1.0+)
+- API token from your CCPM account
 - Node.js 16+ (for plugin runtime)
 
 ## 🔧 Installation
@@ -23,7 +23,7 @@ Seamlessly integrate LaraCollab project management with Claude Code for enhanced
 ### Install via Claude Code Marketplace
 
 ```bash
-claude-code plugin install lara-collab
+claude-code plugin install ccpm
 ```
 
 ### Manual Installation
@@ -31,7 +31,7 @@ claude-code plugin install lara-collab
 1. Clone or download this plugin
 2. Install the plugin locally:
 ```bash
-claude-code plugin install /path/to/lara-collab-plugin
+claude-code plugin install /path/to/ccpm-plugin
 ```
 
 ## ⚙️ Configuration
@@ -43,8 +43,8 @@ After installation, configure your LaraCollab connection:
 ```
 
 You'll need:
-- **Base URL**: Your LaraCollab instance URL (e.g., `https://your-laracollab.com`)
-- **API Token**: Generate this from your LaraCollab user settings
+- **Base URL**: Your CCPM instance URL (e.g., `https://your-ccpm.com`)
+- **API Token**: Generate this from your CCPM user settings
 - **Timeout**: Request timeout in seconds (default: 30)
 
 ## 📚 Available Commands
@@ -140,11 +140,11 @@ You'll need:
 
 ## 🛠️ Advanced Configuration
 
-The plugin stores configuration in `~/.claude/lara-collab.json`:
+The plugin stores configuration in `~/.claude/ccpm.json`:
 
 ```json
 {
-  "baseUrl": "https://your-laracollab.com",
+  "baseUrl": "https://your-ccpm.com",
   "apiToken": "your-api-token",
   "timeout": 30,
   "defaultProjectId": 1,
@@ -175,7 +175,7 @@ The plugin stores configuration in `~/.claude/lara-collab.json`:
 
 2. **Verify API endpoint:**
 ```bash
-curl -H "Authorization: Bearer YOUR_TOKEN" https://your-laracollab.com/api/ai/info
+curl -H "Authorization: Bearer YOUR_TOKEN" https://your-ccpm.com/api/ai/info
 ```
 
 3. **Reconfigure the plugin:**
@@ -196,7 +196,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" https://your-laracollab.com/api/ai/in
 
 ```bash
 # Clone the repository
-git clone https://github.com/laracollab/claude-code-plugin.git
+git clone https://github.com/ccpm/claude-code-plugin.git
 cd claude-code-plugin
 
 # Install dependencies
@@ -212,11 +212,11 @@ npm run build
 ### Plugin Structure
 
 ```
-lara-collab-plugin/
+ccpm-plugin/
 ├── plugin.json              # Plugin metadata
 ├── index.js                 # Main plugin entry point
 ├── src/
-│   ├── api-client.js        # LaraCollab API client
+│   ├── api-client.js        # CCPM API client
 │   ├── config.js           # Configuration manager
 │   ├── commands/           # Command handlers
 │   └── utils/
@@ -239,20 +239,20 @@ This plugin is released under the MIT License. See [LICENSE](LICENSE) for detail
 
 ## 🔗 Links
 
-- **LaraCollab Website**: https://laracollab.com
-- **Documentation**: https://docs.laracollab.com
+- **CCPM Website**: https://ccpm.com
+- **Documentation**: https://docs.ccpm.com
 - **Claude Code**: https://claude.ai/claude-code
-- **Plugin Repository**: https://github.com/laracollab/claude-code-plugin
-- **Issue Tracker**: https://github.com/laracollab/claude-code-plugin/issues
+- **Plugin Repository**: https://github.com/ccpm/claude-code-plugin
+- **Issue Tracker**: https://github.com/ccpm/claude-code-plugin/issues
 
 ## 🆘 Support
 
 If you encounter issues or have questions:
 
 1. Check the [Troubleshooting](#-troubleshooting) section
-2. Search existing [GitHub Issues](https://github.com/laracollab/claude-code-plugin/issues)
+2. Search existing [GitHub Issues](https://github.com/ccpm/claude-code-plugin/issues)
 3. Create a new issue with detailed information
-4. Contact LaraCollab support at support@laracollab.com
+4. Contact CCPM support at support@ccpm.com
 
 ## 📊 Changelog
 
@@ -266,4 +266,4 @@ If you encounter issues or have questions:
 
 ---
 
-**Made with ❤️ by the LaraCollab team**
+**Made with ❤️ by the CCPM team**

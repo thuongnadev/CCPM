@@ -1,5 +1,5 @@
 /**
- * Configuration Manager for LaraCollab Plugin
+ * Configuration Manager for CCPM Plugin
  */
 
 const fs = require('fs').promises;
@@ -8,7 +8,7 @@ const os = require('os');
 
 class ConfigManager {
     constructor() {
-        this.configPath = path.join(os.homedir(), '.claude', 'lara-collab.json');
+        this.configPath = path.join(os.homedir(), '.claude', 'ccpm.json');
         this.config = {};
     }
 

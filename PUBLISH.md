@@ -1,6 +1,6 @@
-# 📤 Publishing LaraCollab Plugin to Claude Code Marketplace
+# 📤 Publishing CCPM Plugin to Claude Code Marketplace
 
-This guide will help you publish the LaraCollab plugin to the Claude Code marketplace so users can easily install and use it.
+This guide will help you publish the CCPM plugin to the Claude Code marketplace so users can easily install and use it.
 
 ## 🎯 Publishing Options
 
@@ -20,9 +20,9 @@ git push origin main
 2. Sign in with your Anthropic account
 3. Click "Submit New Plugin"
 4. Fill in the plugin details:
-   - **Name**: `lara-collab`
-   - **Repository**: `https://github.com/yourusername/lara-collab-plugin`
-   - **Description**: "LaraCollab Project Management Integration for Claude Code"
+   - **Name**: `ccpm`
+   - **Repository**: `https://github.com/yourusername/ccpm-plugin`
+   - **Description**: "CCPM Project Management Integration for Claude Code"
    - **Category**: Development Tools
    - **Tags**: project-management, task-management, collaboration, productivity, api
 
@@ -34,7 +34,7 @@ git push origin main
 **Step 4: Installation by Users**
 Once approved, users can install with:
 ```bash
-claude-code plugin install lara-collab
+claude-code plugin install ccpm
 ```
 
 ### Option 2: GitHub Installation (Direct Install)
@@ -43,11 +43,11 @@ Users can install directly from your GitHub repository:
 
 ```bash
 # Install from your GitHub repository
-claude-code plugin install https://github.com/yourusername/lara-collab-plugin
+claude-code plugin install https://github.com/yourusername/ccpm-plugin
 
 # Or clone and install locally
-git clone https://github.com/yourusername/lara-collab-plugin.git
-claude-code plugin install ./lara-collab-plugin
+git clone https://github.com/yourusername/ccpm-plugin.git
+claude-code plugin install ./ccpm-plugin
 ```
 
 ### Option 3: NPM Package Distribution
@@ -67,10 +67,10 @@ npm publish --tag beta
 **Step 2: Update plugin.json**
 ```json
 {
-  "name": "lara-collab",
+  "name": "ccpm",
   "version": "1.0.0",
-  "npm_package": "lara-collab",
-  "repository": "https://github.com/yourusername/lara-collab-plugin"
+  "npm_package": "ccpm",
+  "repository": "https://github.com/yourusername/ccpm-plugin"
 }
 ```
 
@@ -126,7 +126,7 @@ Ensure these files exist and are complete:
 
 ```bash
 # Tag your release
-git tag -a v1.0.0 -m "Initial release of LaraCollab plugin"
+git tag -a v1.0.0 -m "Initial release of CCPM plugin"
 git push origin v1.0.0
 
 # Create GitHub release via web interface
@@ -141,12 +141,12 @@ git push origin v1.0.0
 3. Provide the following information:
 
 ```
-Plugin Name: LaraCollab Integration
-Repository URL: https://github.com/yourusername/lara-collab-plugin
-Description: Seamlessly integrate LaraCollab project management with Claude Code
+Plugin Name: CCPM Integration
+Repository URL: https://github.com/yourusername/ccpm-plugin
+Description: Seamlessly integrate CCPM project management with Claude Code
 Category: Development Tools
 Tags: project-management, task-management, collaboration, productivity, api
-Homepage: https://laracollab.com
+Homepage: https://ccpm.com
 License: MIT
 ```
 
